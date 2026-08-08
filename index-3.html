@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Tarık Gayrimenkul | Gayrimenkul</title>
+<meta name="description" content="Satılık ve kiralık seçkin gayrimenkul ilanları.">
+<style>
+:root{--bg:#07111f;--card:#0d1b2d;--card2:#10233a;--text:#f5f7fb;--muted:#9eacc0;--accent:#d8b36a;--line:#20324a}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--bg);color:var(--text);font-family:Inter,system-ui,-apple-system,Segoe UI,sans-serif}a{text-decoration:none;color:inherit}
+.container{width:min(1160px,92%);margin:auto}.nav{height:78px;display:flex;align-items:center;justify-content:space-between}.logo{font-size:23px;font-weight:800;letter-spacing:.5px}.logo span{color:var(--accent)}.navlinks{display:flex;gap:28px;color:#c7d0dc;font-size:14px}.btn{border:0;border-radius:12px;padding:13px 18px;font-weight:700;cursor:pointer}.gold{background:var(--accent);color:#111}.outline{background:transparent;border:1px solid #38506c;color:white}
+.hero{min-height:620px;display:flex;align-items:center;position:relative;overflow:hidden;background:radial-gradient(circle at 75% 20%,#183452 0,#07111f 52%)}.hero:after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(7,17,31,.98),rgba(7,17,31,.55),rgba(7,17,31,.15));pointer-events:none}.hero-content{position:relative;z-index:1;max-width:720px;padding:80px 0}.eyebrow{color:var(--accent);font-weight:800;letter-spacing:2px;font-size:12px}.hero h1{font-size:clamp(42px,6vw,72px);line-height:1.02;margin:18px 0}.hero p{font-size:18px;color:#b6c2d1;max-width:590px;line-height:1.7}.actions{display:flex;gap:12px;margin-top:28px;flex-wrap:wrap}
+section{padding:80px 0}.section-head{display:flex;justify-content:space-between;align-items:end;gap:20px;margin-bottom:28px}.section-head h2{font-size:34px;margin:5px 0}.section-head p{color:var(--muted);margin:0}
+.filters{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:24px}.filter{padding:11px 16px;border:1px solid var(--line);background:#0b1828;color:#c8d2df;border-radius:10px;cursor:pointer}.filter.active{background:var(--accent);color:#111;border-color:var(--accent)}
+.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}.property{background:var(--card);border:1px solid var(--line);border-radius:18px;overflow:hidden;transition:.2s}.property:hover{transform:translateY(-4px);border-color:#3c5570}.photo{height:220px;background:linear-gradient(135deg,#243b55,#141e30);display:flex;align-items:center;justify-content:center;color:#8291a5;position:relative}.badge{position:absolute;top:14px;left:14px;background:rgba(7,17,31,.85);padding:7px 10px;border-radius:8px;font-size:12px;font-weight:700}.info{padding:20px}.price{color:var(--accent);font-size:22px;font-weight:800}.title{font-size:18px;font-weight:750;margin:8px 0}.meta{color:var(--muted);font-size:14px;line-height:1.7}.contact{background:linear-gradient(135deg,#11243a,#0a1625);border:1px solid var(--line);border-radius:24px;padding:42px;display:flex;justify-content:space-between;align-items:center;gap:30px}.contact h2{margin:0 0 8px}.contact p{color:var(--muted);margin:0}
+footer{border-top:1px solid var(--line);padding:28px 0;color:#77869a;font-size:13px}.hidden{display:none}
+@media(max-width:800px){.navlinks{display:none}.grid{grid-template-columns:1fr}.hero{min-height:560px}.contact{flex-direction:column;align-items:flex-start;padding:28px}.section-head{display:block}.section-head p{margin-top:8px}}
+</style>
+</head>
+<body>
+<header class="container nav">
+  <a class="logo" href="#">TARIK<span>GAYRİMENKUL</span></a>
+  <nav class="navlinks"><a href="#ilanlar">İlanlar</a><a href="#hakkimizda">Hakkımızda</a><a href="#iletisim">İletişim</a></nav>
+  <a class="btn gold" href="https://wa.me/905383680826" target="_blank">WhatsApp</a>
+</header>
+
+<main>
+<section class="hero">
+  <div class="container hero-content">
+    <div class="eyebrow">GAYRİMENKUL • GÜVEN • DEĞER</div>
+    <h1>Hayalindeki yaşam için doğru adres.</h1>
+    <p>Seçkin konut, villa ve yatırım fırsatlarını tek yerde keşfet. Size uygun gayrimenkulü birlikte bulalım.</p>
+    <div class="actions"><a class="btn gold" href="#ilanlar">İlanları Gör</a><a class="btn outline" href="#iletisim">Bize Ulaşın</a></div>
+  </div>
+</section>
+
+<section id="ilanlar">
+<div class="container">
+  <div class="section-head"><div><div class="eyebrow">SEÇKİN PORTFÖY</div><h2>Öne Çıkan İlanlar</h2></div><p id="count"></p></div>
+  <div class="filters">
+    <button class="filter active" data-filter="all">Tümü</button><button class="filter" data-filter="satilik">Satılık</button><button class="filter" data-filter="kiralik">Kiralık</button>
+  </div>
+  <div class="grid" id="grid">
+    <article class="property" data-type="satilik"><div class="photo"><span class="badge">SATILIK</span>FOTOĞRAF</div><div class="info"><div class="price">₺8.750.000</div><div class="title">Modern 4+1 Villa</div><div class="meta">Ankara • 240 m² • 4+1 • 2 Banyo</div></div></article>
+    <article class="property" data-type="satilik"><div class="photo"><span class="badge">SATILIK</span>FOTOĞRAF</div><div class="info"><div class="price">₺4.950.000</div><div class="title">Merkezi Konumda 3+1</div><div class="meta">Ankara • 155 m² • 3+1 • 1 Banyo</div></div></article>
+    <article class="property" data-type="kiralik"><div class="photo"><span class="badge">KİRALIK</span>FOTOĞRAF</div><div class="info"><div class="price">₺32.500 / ay</div><div class="title">Prestijli Rezidans 2+1</div><div class="meta">Ankara • 110 m² • 2+1 • 1 Banyo</div></div></article>
+  </div>
+</div>
+</section>
+
+<section id="hakkimizda">
+<div class="container">
+  <div class="section-head"><div><div class="eyebrow">NEDEN BİZ?</div><h2>Güven üzerine kurulu.</h2></div></div>
+  <div class="grid">
+    <div class="property"><div class="info"><div class="title">01 • Şeffaflık</div><div class="meta">İlan ve süreç bilgilerini açık şekilde sunuyoruz.</div></div></div>
+    <div class="property"><div class="info"><div class="title">02 • Doğru Portföy</div><div class="meta">İhtiyacınıza uygun seçenekleri gereksiz kalabalık olmadan sunuyoruz.</div></div></div>
+    <div class="property"><div class="info"><div class="title">03 • Hızlı İletişim</div><div class="meta">WhatsApp üzerinden hızlıca bilgi ve randevu alabilirsiniz.</div></div></div>
+  </div>
+</div>
+</section>
+
+<section id="iletisim">
+<div class="container">
+<div class="contact"><div><div class="eyebrow">İLETİŞİM</div><h2>Bir sonraki evinizi birlikte bulalım.</h2><p>Detaylı bilgi ve portföy için bize ulaşın.</p></div><div class="actions"><a class="btn gold" href="https://wa.me/905383680826" target="_blank">WhatsApp'tan Yaz</a><a class="btn outline" href="tel:+905383680826">Ara</a></div></div>
+</div>
+</section>
+</main>
+
+<footer><div class="container">© 2026 Tarık Gayrimenkul • Tüm hakları saklıdır.</div></footer>
+
+<script>
+const buttons=document.querySelectorAll('.filter'),cards=document.querySelectorAll('.property[data-type]'),count=document.getElementById('count');
+function update(type){let n=0;cards.forEach(c=>{const show=type==='all'||c.dataset.type===type;c.classList.toggle('hidden',!show);if(show)n++});count.textContent=n+' ilan gösteriliyor'}
+buttons.forEach(b=>b.addEventListener('click',()=>{buttons.forEach(x=>x.classList.remove('active'));b.classList.add('active');update(b.dataset.filter)}));update('all');
+</script>
+</body>
+</html>
